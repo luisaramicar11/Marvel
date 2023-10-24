@@ -1,15 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CustomHooks from "./components/CustomHooks";
 import ContactForm from "./components/ContactForm";
-
-function App() {
-  return (
-    <>
-      {/*     <CustomHooks /> */}
-      <ContactForm />
-    </>
-  );
-}
-
-export default App;
+import Comics from "./components/Comics";
+import { Menu } from "./components/Menu";
+import { Home } from "./components/Home";
+import { Characters } from "./components/Characters";
+import { Character } from "./components/Character";

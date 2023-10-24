@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0a08;
+}
+
+.header-characters .image-header-characters img {
+  width: 100%;
+  height: auto;
+}
+.search-bar {
+  width: 80%;
+  margin: 0 auto;
+}
+.header-characters .search {
+  outline: none;
+  background: none;
+  width: 22rem;
+  height: 2rem;
+  border-radius: 1rem;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  border: thin solid #b41f23;
+}
+.content-characterCard {
+  width: 80%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
