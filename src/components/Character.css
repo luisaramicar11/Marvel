@@ -1,0 +1,27 @@
+.box-content {
+  width: 100%;
+  margin: 0 auto;
+  height: 37.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+    url("../assets/images/marvel.jpg");
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.right-box {
+  flex-basis: 20%;
+}
+.left-box {
+  flex-basis: 50%;
+}
+.box-content img {
+  width: 19rem;
+  height: 25rem;
+  border: thin solid #fff;
+  box-shadow: 0 5px 5px 5px rgba(255, 255, 255, 0.2);
+  transform: rotate(20deg);
+  transition: 0.5s;
+}
