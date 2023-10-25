@@ -7,6 +7,7 @@ import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
 import { Characters } from "./components/Characters";
 import { Character } from "./components/Character";
+import  SeriesCards  from "./components/SeriesCards";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route path="/characters/:id" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
+          <Route path="/seriescards" element={<SeriesCards />} />
           <Route path="/ContactForm" element={<ContactForm />} />
         </Routes>
       </BrowserRouter>
