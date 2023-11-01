@@ -1,6 +1,7 @@
 import { useForm } from "../hooks/useForm";
 import Loader from "./Loader";
 import Message from "./Message";
+import "./ContactForm.css";
 
 const initialForm = {
   name: "",

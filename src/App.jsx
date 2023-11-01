@@ -7,6 +7,8 @@ import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
 import { Characters } from "./components/Characters";
 import { Character } from "./components/Character";
+import Events from "./components/Events";
+import { EventsDetail } from "./components/EventsDetail";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route path="/characters/:id" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:id" element={<EventsDetail />} />
           <Route path="/ContactForm" element={<ContactForm />} />
         </Routes>
       </BrowserRouter>
