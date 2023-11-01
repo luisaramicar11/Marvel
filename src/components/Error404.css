@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+p,
+h2,
+h3 {
+  text-align: left;
+  color: var(--bg-second-color);
+}
+.bg-color {
+  background-color: var(--bg-color);
+}
+.error {
+  text-align: center;
+  padding: 4rem;
+}
+.img-groot {
+  width: 50vw;
+  height: 100vh;
+}

@@ -1,0 +1,39 @@
+import "./Footer.css";
+export default function Footer() {
+  return (
+    <footer className="bg-dark text-white p-3">
+      <div className="container text-center">
+        <nav className="d-flex justify-content-evenly">
+          <a
+            href="https://www.facebook.com/Marvel/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="bi bi-facebook fs-3"></i>
+          </a>
+          <a href="https://twitter.com/Marvel" target="_blank" rel="noreferrer">
+            <i className="bi bi-twitter fs-3"></i>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noreferrer">
+            <i className="bi bi-github fs-3"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UC8LEXZO4hjzVk6wO3G9pJyQ"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="bi bi-youtube fs-3"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/marvel/?hl=es"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="bi bi-instagram"></i>
+          </a>
+        </nav>
+        <small>&copy; 2023 @inroute. Hecho con fines educativos.</small>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,16 @@
+a {
+  color: var(--link-color);
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  color: var(--first-color);
+}
+
+.bg-dark {
+  background-color: var(--second-color) !important;
+}
+
+.text-white {
+  color: fff !important;
+}
