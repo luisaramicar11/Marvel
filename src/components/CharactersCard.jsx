@@ -16,7 +16,7 @@ export const CharactersCard = ({ data }) => {
                 alt=""
               />
               <div className="card-character-title">
-                <h3>{character.name}</h3>
+                <h3 className="fs-5">{character.name}</h3>
               </div>
             </div>
           ))

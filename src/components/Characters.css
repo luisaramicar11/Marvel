@@ -1,7 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #0b0a08;
+}
+
+.bg-second-color {
+  color: var(--second-color);
+}
+
+.bg-hero-image {
+  background-image: url("../assets/images/Portada.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-alpha-color {
+  background-color: var(--bg-alpha-color);
 }
 
 .header-characters .image-header-characters img {
@@ -18,7 +32,7 @@ body {
   width: 22rem;
   height: 2rem;
   border-radius: 1rem;
-  color: #fff;
+  color: black;
   padding: 1.2rem;
   font-size: 1.5rem;
   border: thin solid #b41f23;

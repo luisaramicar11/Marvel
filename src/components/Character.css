@@ -25,3 +25,6 @@
   transform: rotate(20deg);
   transition: 0.5s;
 }
+.bg-btn {
+  color: var(--first-color);
+}

@@ -25,10 +25,17 @@ export function Character() {
                 alt=""
               />
             </div>
-            <div className="left-box">
-              <h1>{data.data.results[0].name}</h1>
+            <div className="left-box d-flex flex-column">
+              <h1 className="text-center fw-bold mb-4">
+                {data.data.results[0].name}
+              </h1>
               <h4>{data.data.results[0].description}</h4>
-              <button onClick={handGoBack}>Go Back</button>
+              <button
+                className="align-self-center bg-btn fs-5 mt-3"
+                onClick={handGoBack}
+              >
+                Go Back
+              </button>
             </div>
           </div>
         </div>

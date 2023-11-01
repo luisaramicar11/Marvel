@@ -29,5 +29,5 @@ export const useFetch = (url) => {
     };
     getData(url);
   }, [url]);
-  return { data, isPending, error };
+  return { data, isPending, error, setData };
 };
