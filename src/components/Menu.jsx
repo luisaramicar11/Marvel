@@ -45,6 +45,18 @@ export function Menu() {
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
+                  to="/seriescards"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  SERIES
+                </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
                   to="#"
                   id="navbarDropdownMenuLink"
                   role="button"
@@ -53,30 +65,30 @@ export function Menu() {
                 >
                   MORE
                 </Link>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="sitios.html#ultimos-proyectos"
-                    >
-                      SHOP
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="sitios.html#single-page">
-                      Single Page
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="sitios.html#multi-page">
-                      Multi Page
-                    </a>
-                  </li>
-                </ul>
               </li>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="sitios.html#ultimos-proyectos"
+                  >
+                    SHOP
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="sitios.html#single-page">
+                    Single Page
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="sitios.html#multi-page">
+                    Multi Page
+                  </a>
+                </li>
+              </ul>
             </ul>
           </div>
         </div>
