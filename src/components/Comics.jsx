@@ -23,7 +23,7 @@ export default function Comics() {
   return (
     <>
       <div>
-        <div className="content">
+        <div className="contentComics">
           {data === null
             ? (data = null)
             : data.data.results.map((comic) => (

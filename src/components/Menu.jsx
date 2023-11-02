@@ -3,7 +3,6 @@ import Logo from "../assets/images/MarvelLogo.svg";
 import "./Menu.css";
 export function Menu() {
   return (
-
     <header>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light navbar-dark bg-dark">
         <div className="container">
@@ -35,7 +34,7 @@ export function Menu() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/events">
-                  EVENTS"
+                  EVENTS
                 </Link>
               </li>
               <li className="nav-item">
@@ -48,18 +47,12 @@ export function Menu() {
                   STORIES
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/seriescards"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+              <li className="nav-item">
+                <Link className="nav-link" to="/seriescards">
                   SERIES
                 </Link>
               </li>
+
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"

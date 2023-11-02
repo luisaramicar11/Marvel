@@ -9,7 +9,7 @@ export default function Events() {
 
   return (
     <>
-      <div className="container">
+      <div className="containerEvents">
         {data === null ? (
           (data = null)
         ) : (
