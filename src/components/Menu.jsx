@@ -6,7 +6,7 @@ export function Menu() {
     <header>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href="index.html">
+          <a className="navbar-brand" href="">
             <img src={Logo} alt="Logo Marvel" />
           </a>
           <button
@@ -42,15 +42,8 @@ export function Menu() {
                   STORIES
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/seriescards"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+              <li className="nav-item">
+                <Link className="nav-link" to="/seriescards">
                   SERIES
                 </Link>
               </li>

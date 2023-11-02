@@ -17,11 +17,11 @@ export function Home() {
           <div className="card mx-auto mb-3" style={{ width: "18rem" }}>
             <img
               src={Comic1}
-              className="card-img-top bg-third-color"
+              className="card-img-top bg-third-color card-comic-home"
               alt="Comic 1"
             />
             <div className="card-body">
-              <h5 className="card-title">FATE OF TWO WORLDS</h5>
+              <h5 className="card-title fw-bold">FATE OF TWO WORLDS</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic1">
                 Más detalles
@@ -38,7 +38,7 @@ export function Home() {
               alt="Comic 2"
             />
             <div className="card-body">
-              <h5 className="card-title">CAPITANA MARVEL</h5>
+              <h5 className="card-title fw-bold">CAPITANA MARVEL</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic2">
                 Más detalles
@@ -55,7 +55,7 @@ export function Home() {
               alt="Comic 3"
             />
             <div className="card-body">
-              <h5 className="card-title">SIMBIONTE SPIDERMAN</h5>
+              <h5 className="card-title fw-bold">SIMBIONTE SPIDERMAN</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic3">
                 Más detalles
@@ -72,7 +72,9 @@ export function Home() {
               alt="¿Interesado?"
             />
             <div className="card-body">
-              <h5 className="card-title">THE DEATH OF CAPTAIN MARVEL</h5>
+              <h5 className="card-title fw-bold">
+                THE DEATH OF CAPTAIN MARVEL
+              </h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic4">
                 Más detalles

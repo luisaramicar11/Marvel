@@ -1,61 +1,31 @@
-//import "./Characters.css";
 import { StoriesCard } from "./StoriesCard";
 import { useFetch } from "../hooks/useFetch";
 import { useState } from "react";
-/* import { Pagination } from "./Pagination"; */
 import ReactPaginate from "react-paginate";
 
 export function Stories() {
   const [url, setUrl] = useState(
-    `https://gateway.marvel.com:443/v1/public/stories?ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
+    `https://gateway.marvel.com:443/v1/public/stories?limit=10&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
   );
 
-  //https://gateway.marvel.com:443/v1/public/characters?limit=20&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df
-  //https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df
-  let { data, isPending, error } = useFetch(url);
-  const [search, setSearch] = useState("");
+  let { data, isPending, error, setData } = useFetch(url);
   const [herosPerPage, setHerosPerPage] = useState(10);
-  const [currentPage, setCurrentPage] = useState(1);
 
   console.log(data);
 
-  console.log(herosPerPage);
-
-  const indexOfLastHero = currentPage * herosPerPage; //1*20=20
-  const indexOfFirstHero = indexOfLastHero - herosPerPage; //20-20=0
-  const currentHero = data?.data.results.slice(
-    indexOfFirstHero,
-    indexOfLastHero
-  );
-
-  //console.log(data);
-  console.log(currentHero);
-
-  const totalHeros = data?.data.total;
-
-  console.log(data?.data.total);
-  console.log(data?.data.results[0].characters.collectionURI);
-
-  //console.log(currentHero);
-  //console.log(isPending, error);
-
-  const searchMarvel = () => {
+  const fetchHeros = (currentPage) => {
     setUrl(
-      `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${search}&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
+      `https://gateway.marvel.com:443/v1/public/stories?limit=${herosPerPage}&offset=${currentPage}&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
     );
   };
 
-  const fetchHeros = (currentHero) => {
-    setUrl(
-      `https://gateway.marvel.com:443/v1/public/characters?limit=${currentHero}&offset=${herosPerPage}&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
-    );
-  };
-
-  const handlePageClick = (pag) => {
-    console.log(pag.selected);
-    let currentHero = pag.selected + 1;
-    console.log(currentHero);
-    const herosForServer = fetchHeros(currentHero);
+  const handlePageClick = (pagNumber) => {
+    console.log(pagNumber);
+    console.log(pagNumber.selected);
+    let currentPage = pagNumber.selected * 10;
+    console.log(currentPage);
+    const herosForServer = fetchHeros(currentPage);
+    setData(herosForServer);
   };
 
   return (
@@ -71,12 +41,31 @@ export function Stories() {
                 {data === null ? (
                   (data = null)
                 ) : (
-                  <StoriesCard data={currentHero} />
+                  <StoriesCard data={data?.data.results} />
                 )}
               </ol>
             </div>
           </section>
         </div>
+        <ReactPaginate
+          previuosLabel={"Previous"}
+          nextLabel={"Next"}
+          breakLabel={"..."}
+          pageCount={100}
+          marginPagesDisplayed={3}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination justify-content-center mb-0"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
     </>
   );

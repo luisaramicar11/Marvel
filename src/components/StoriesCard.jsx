@@ -14,7 +14,6 @@ export const StoriesCard = ({ data }) => {
                 <div className="fw-bold">{storie.type}</div>
                 {storie.title}
               </div>
-              <span className="badge bg-primary rounded-pill">{storie.id}</span>
             </li>
           ))
         : data === null}
