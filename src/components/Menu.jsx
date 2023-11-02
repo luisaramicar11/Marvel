@@ -28,8 +28,13 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Characters">
+                <Link className="nav-link" to="/characters">
                   CHARACTERS
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/events">
+                  EVENTS
                 </Link>
               </li>
               <li className="nav-item">
@@ -47,6 +52,7 @@ export function Menu() {
                   SERIES
                 </Link>
               </li>
+
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"

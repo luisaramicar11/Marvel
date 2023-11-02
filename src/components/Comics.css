@@ -1,0 +1,51 @@
+.cardComics {
+  position: relative;
+  width: 280px;
+  height: 413px;
+  display: flex;
+  background: linear-gradient(45deg, #d41e31, #491f8f);
+  border-radius: 15px;
+}
+
+.imgComics {
+  margin-bottom: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 290px;
+  height: 413px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.6s;
+}
+
+.contentComics {
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.titleComics {
+  padding: 0px;
+  margin-bottom: 1px;
+  text-align: justify;
+  text-transform: uppercase;
+  font-size: smaller !important;
+}
+
+.buttonComics {
+  position: initial;
+  display: inline-block;
+  padding: 8px, 10px;
+}
+
+.cardComics:hover .imgComics {
+  height: 250px;
+  left: 10%;
+}
+.cardComics:hover .contentComics {
+  left: 5%;
+  opacity: 1;
+}

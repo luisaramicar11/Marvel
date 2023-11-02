@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Carrousel2 from "../assets/images/carruselTwo.jpg";
 import Loki from "../assets/images/Loki.jpg";
 import HeroesMarvel from "../assets/images/marvelHeroes.jpg";
@@ -7,8 +9,26 @@ import Comic3 from "../assets/images/comic3.png";
 import Comic4 from "../assets/images/comic4.png";
 import { Link } from "react-router-dom";
 import "./Home.css";
+
 export function Home() {
+  window.onload = function () {
+    toast(
+      "Hola! Es un placer mostrarles nuestro proyecto final. Gracias a la iniciativa BE-ME por esta maravillosa experiencia",
+      {
+        position: "bottom-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      }
+    );
+  };
+
   return (
+
     <div className="bg-color">
       <img className="hero-image" src={HeroesMarvel} alt="HeroesMarvel" />
       <section className="row min-vh-100 align-items-lg-center">
@@ -157,6 +177,7 @@ export function Home() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 }
