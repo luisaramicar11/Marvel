@@ -13,7 +13,7 @@ import { EventsDetail } from "./components/EventsDetail";
 import Footer from "./components/Footer";
 import { Stories } from "./components/Stories";
 import { Error404 } from "./components/Error404";
-import SeriesCards from "./components/SeriesCards";
+import Series from "./components/Series";
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventsDetail />} />
           <Route path="/stories" element={<Stories />} />
-          <Route path="/seriescards" element={<SeriesCards />} />
+          <Route path="/series" element={<Series />} />
           <Route path="/ContactForm" element={<ContactForm />} />
           <Route path="*" element={<Error404 />}></Route>
         </Routes>
