@@ -48,7 +48,7 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/seriescards">
+                <Link className="nav-link" to="/series">
                   SERIES
                 </Link>
               </li>
