@@ -14,30 +14,34 @@ import Footer from "./components/Footer";
 import { Stories } from "./components/Stories";
 import { Error404 } from "./components/Error404";
 import SeriesCards from "./components/SeriesCards";
-
+import { useContext } from "react";
+import { LanguageProvider } from "./components/context/LanguageContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<Characters />} />
-          <Route path="/characters/:id" element={<Character />} />
-          <Route path="/comics" element={<Comics />} />
-          <Route path="/comic1" element={<Navigate to="/comics" />} />
-          <Route path="/comic2" element={<Navigate to="/comics" />} />
-          <Route path="/comic3" element={<Navigate to="/comics" />} />
-          <Route path="/comic4" element={<Navigate to="/comics" />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/events/:id" element={<EventsDetail />} />
-          <Route path="/stories" element={<Stories />} />
-          <Route path="/seriescards" element={<SeriesCards />} />
-          <Route path="/ContactForm" element={<ContactForm />} />
-          <Route path="*" element={<Error404 />}></Route>
-        </Routes>
-        <Footer />
+        <LanguageProvider>
+          <Menu />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/characters" element={<Characters />} />
+            <Route path="/characters/:id" element={<Character />} />
+            <Route path="/comics" element={<Comics />} />
+            <Route path="/comic1" element={<Navigate to="/comics" />} />
+            <Route path="/comic2" element={<Navigate to="/comics" />} />
+            <Route path="/comic3" element={<Navigate to="/comics" />} />
+            <Route path="/comic4" element={<Navigate to="/comics" />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/events/:id" element={<EventsDetail />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/seriescards" element={<SeriesCards />} />
+            <Route path="/ContactForm" element={<ContactForm />} />
+            <Route path="*" element={<Error404 />}></Route>
+          </Routes>
+
+          <Footer />
+        </LanguageProvider>
       </BrowserRouter>
     </>
   );

@@ -1,5 +1,9 @@
+import LanguageContext from "./context/LanguageContext";
+import { useContext } from "react";
 import "./Footer.css";
+
 export default function Footer() {
+  const { texts } = useContext(LanguageContext);
   return (
     <footer className="bg-dark text-white p-3">
       <div className="container text-center">
@@ -32,7 +36,7 @@ export default function Footer() {
             <i className="bi bi-instagram"></i>
           </a>
         </nav>
-        <small>&copy; 2023 @inroute. Hecho con fines educativos.</small>
+        <small>{texts.footerCopy}</small>
       </div>
     </footer>
   );
