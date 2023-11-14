@@ -1,7 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
+import LanguageContext from "./context/LanguageContext";
+import { useContext } from "react";
 import "./Character.css";
+
 export function Character() {
+  const { texts } = useContext(LanguageContext);
+
   const { id } = useParams();
   const navigate = useNavigate();
   let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`;
@@ -34,7 +39,7 @@ export function Character() {
                 className="align-self-center bg-btn fs-5 mt-3"
                 onClick={handGoBack}
               >
-                Go Back
+                {texts.btnGoBack}
               </button>
             </div>
           </div>

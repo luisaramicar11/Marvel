@@ -1,8 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
+import LanguageContext from "./context/LanguageContext";
+import { useContext } from "react";
+
 import "./EventsDetail.css";
 
 export function EventsDetail() {
+  const { texts } = useContext(LanguageContext);
+
   const { id } = useParams();
   const navigate = useNavigate();
   let url = `https://gateway.marvel.com:443/v1/public/events/${id}?ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`;
@@ -28,7 +33,12 @@ export function EventsDetail() {
             <div className="left-box">
               <h1>{data.data.results[0].name}</h1>
               <h4>{data.data.results[0].description}</h4>
-              <button onClick={handGoBack}>Go Back</button>
+              <button
+                className="align-self-center bg-btn fs-5 mt-3"
+                onClick={handGoBack}
+              >
+                {texts.btnGoBack}
+              </button>
             </div>
           </div>
         </div>

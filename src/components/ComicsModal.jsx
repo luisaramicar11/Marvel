@@ -19,14 +19,20 @@ export default class ComicsModal extends Component {
                 onClick={this.props.hide}
               ></button>
             </div>
-            <div className="modal-body col-lg-8">
-              <img
-                src={this.props.img}
-                className="img-thumbnail rounded float-right"
-              />
-              <p className="text-sm-right text-muted">
-                {this.props.description}
-              </p>
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-8 col-sm-6">
+                  <p className="lead">{this.props.description}</p>
+                </div>
+                <div className="col-4 col-sm-6">
+                  <img
+                    src={this.props.img}
+                    className="img-responsive"
+                    width="350"
+                    height="375"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

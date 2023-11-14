@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import "./Events.css";
+import moment from "moment";
 
 export function EventsCard({ data }) {
   const navigate = useNavigate();
+
   return (
     <>
       {data
@@ -17,8 +19,8 @@ export function EventsCard({ data }) {
                 />
 
                 <div className="description">
-                  <h3>{events.title}</h3>
-                  <h5>{events.modified}</h5>
+                  <h4>{events.title}</h4>
+                  <h5>{moment(events.modified).format("MM-DD-YYYY")}</h5>
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HeroesMarvel from "../assets/images/marvelHeroes.jpg";
@@ -6,30 +7,31 @@ import Comic2 from "../assets/images/comic2.jpg";
 import Comic3 from "../assets/images/comic3.png";
 import Comic4 from "../assets/images/comic4.png";
 import { Link } from "react-router-dom";
+import LanguageContext from "./context/LanguageContext";
+
 import "./Home.css";
 
 export function Home() {
+  const { texts } = useContext(LanguageContext);
+
   window.onload = function () {
-    toast(
-      "Hola! Es un placer mostrarles nuestro proyecto final. Gracias a la iniciativa BE-ME por esta maravillosa experiencia",
-      {
-        position: "bottom-right",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      }
-    );
+    toast(texts.welcome, {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
     <div className="bg-color">
       <img className="hero-image" src={HeroesMarvel} alt="HeroesMarvel" />
       <section className="row min-vh-100 align-items-lg-center">
-        <p className="text-center fw-bold p-5">THE LATEST COMICS</p>
+        <p className="text-center fw-bold p-5">{texts.homelatestComics}</p>
         <article className="col-12 col-md-6 col-lg-3 d-flex">
           <div className="card mx-auto mb-3" style={{ width: "18rem" }}>
             <img
@@ -41,7 +43,7 @@ export function Home() {
               <h5 className="card-title fw-bold">FATE OF TWO WORLDS</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic1">
-                Más detalles
+                {texts.homeMoreDetails}
                 <i className="bi bi-chevron-right"></i>
               </Link>
             </div>
@@ -58,7 +60,7 @@ export function Home() {
               <h5 className="card-title fw-bold">CAPITANA MARVEL</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic2">
-                Más detalles
+                {texts.homeMoreDetails}
                 <i className="bi bi-chevron-right"></i>
               </Link>
             </div>
@@ -75,7 +77,7 @@ export function Home() {
               <h5 className="card-title fw-bold">SIMBIONTE SPIDERMAN</h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic3">
-                Más detalles
+                {texts.homeMoreDetails}
                 <i className="bi bi-chevron-right"></i>
               </Link>
             </div>
@@ -94,14 +96,14 @@ export function Home() {
               </h5>
               <p className="card-text">2023</p>
               <Link className="text-third" to="/comic4">
-                Más detalles
+                {texts.homeMoreDetails}
                 <i className="bi bi-chevron-right"></i>
               </Link>
             </div>
           </div>
         </article>
       </section>
-      <p className="text-center fw-bold p-5">LATEST TRAILERS, CLIPS & MORE</p>
+      <p className="text-center fw-bold p-5">{texts.homelatestTrailer}</p>
       <div id="carouselExample" className="carousel slide mt-5">
         <div className="carousel-inner">
           <div className="carousel-item ratio ratio-16x9 active">

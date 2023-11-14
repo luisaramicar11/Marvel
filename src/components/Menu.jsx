@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { useAccordionButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/MarvelLogo.svg";
+import es from "../assets/images/es.svg";
+import LanguageContext from "./context/LanguageContext";
 import "./Menu.css";
 export function Menu() {
+  const { texts, handleLanguage } = useContext(LanguageContext);
+
   return (
     <header>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light navbar-dark bg-dark">
@@ -24,31 +30,31 @@ export function Menu() {
             <ul className="navbar-nav ms-lg-auto">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">
-                  HOME
+                  {texts.navHome}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/characters">
-                  CHARACTERS
+                  {texts.navCharacters}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/events">
-                  EVENTS
+                  {texts.navEvents}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/comics">
-                  COMICS
+                  {texts.navComics}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/stories">
-                  STORIES
+                  {texts.navStories}
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/seriescards">
+                <Link className="nav-link" to="/series">
                   SERIES
                 </Link>
               </li>
@@ -61,25 +67,33 @@ export function Menu() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  MORE
+                  {texts.navMore}
                 </Link>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a className="dropdown-item">SHOP</a>
+                    <a className="dropdown-item">{texts.navShop}</a>
                   </li>
                   <li>
-                    <a className="dropdown-item">Single Page</a>
+                    <a className="dropdown-item">{texts.navSinglePage}</a>
                   </li>
                   <li>
-                    <a className="dropdown-item">Multi Page</a>
+                    <a className="dropdown-item">{texts.navMultiPage}</a>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
+          <select
+            className="nav-item"
+            name="language"
+            onChange={handleLanguage}
+          >
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
         </div>
       </nav>
     </header>
