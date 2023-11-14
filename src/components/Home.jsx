@@ -28,7 +28,6 @@ export function Home() {
   };
 
   return (
-
     <div className="bg-color">
       <img className="hero-image" src={HeroesMarvel} alt="HeroesMarvel" />
       <section className="row min-vh-100 align-items-lg-center">
@@ -133,11 +132,11 @@ export function Home() {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/h_h6oMhD6MA?si=olMvSlqjHvA9qc2T"
+              src="https://www.youtube.com/embed/leZABQZcyh0?si=q7a8fEVJlHiPe1Ck"
               title="YouTube video player"
-              frameBorder="0"
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
+              allowfullscreen
             ></iframe>
           </div>
           <div className="carousel-item ratio ratio-16x9">
