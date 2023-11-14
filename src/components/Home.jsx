@@ -1,7 +1,5 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Carrousel2 from "../assets/images/carruselTwo.jpg";
-import Loki from "../assets/images/Loki.jpg";
 import HeroesMarvel from "../assets/images/marvelHeroes.jpg";
 import Comic1 from "../assets/images/comic1.png";
 import Comic2 from "../assets/images/comic2.jpg";
@@ -123,7 +121,7 @@ export function Home() {
               height="315"
               src="https://www.youtube.com/embed/fM7v_IFaH1g?si=zS8Wpdp_cMU2f_T9"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
@@ -134,7 +132,7 @@ export function Home() {
               height="315"
               src="https://www.youtube.com/embed/leZABQZcyh0?si=q7a8fEVJlHiPe1Ck"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
@@ -145,7 +143,7 @@ export function Home() {
               height="315"
               src="https://www.youtube.com/embed/DiJ71etOG8M?si=Ey5IHeta6i3Qfvn7"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
