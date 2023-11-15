@@ -16,7 +16,12 @@ export function Error404() {
         </p>
       </article>
       <article className="col-12 col-md-6 col-l-3 bg-color">
-        <img className="img-fluid img-groot" src={Groot} alt="Groot" />
+        <img
+          className="img-fluid img-groot mt-5"
+          src={Groot}
+          alt="Groot"
+          style={{ width: "30rem", height: "30rem" }}
+        />
       </article>
     </div>
   );

@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Carrousel2 from "../assets/images/carruselTwo.jpg";
-import Loki from "../assets/images/Loki.jpg";
 import HeroesMarvel from "../assets/images/marvelHeroes.jpg";
 import Comic1 from "../assets/images/comic1.png";
 import Comic2 from "../assets/images/comic2.jpg";
@@ -105,6 +103,46 @@ export function Home() {
           </div>
         </article>
       </section>
+
+      <div
+        className="card mb-3 mt-3 "
+        style={{ maxWidth: "960px", height: "auto", margin: "0 auto" }}
+      >
+        <div className="row g-0">
+          <div className="col-md-6">
+            <div className="rounded-start ratio ratio-16x9 active ">
+              <iframe
+                className="rounded-start "
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/bInH1DkpFNA?si=NLnC-pYw4l1crIyf"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div className="col-md-6 d-flex align-items-center">
+            <div className="card-body">
+              <h5 className="card-title fw-bold">
+                {" "}
+                TRAILER LOKI: SEASON 2 EPISODE 6
+              </h5>
+              <div className="card-text">
+                The final episode of Loki’s second season plays like a series
+                finale, and it has some grand ideas.
+              </div>
+              <div className="card-text">
+                <small className="text-body-secondary">
+                  Available Now on Disney
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <p className="text-center fw-bold p-5">{texts.homelatestTrailer}</p>
       <div id="carouselExample" className="carousel slide mt-5">
         <div className="carousel-inner">
@@ -125,7 +163,7 @@ export function Home() {
               height="315"
               src="https://www.youtube.com/embed/fM7v_IFaH1g?si=zS8Wpdp_cMU2f_T9"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
@@ -134,11 +172,11 @@ export function Home() {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/h_h6oMhD6MA?si=olMvSlqjHvA9qc2T"
+              src="https://www.youtube.com/embed/leZABQZcyh0?si=q7a8fEVJlHiPe1Ck"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
+              allowfullscreen
             ></iframe>
           </div>
           <div className="carousel-item ratio ratio-16x9">
@@ -147,7 +185,7 @@ export function Home() {
               height="315"
               src="https://www.youtube.com/embed/DiJ71etOG8M?si=Ey5IHeta6i3Qfvn7"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
