@@ -27,6 +27,7 @@ import { AddressForm } from "./components/store/AddressForm.jsx";
 import { PaymentForm } from "./components/store/PaymentForm.jsx";
 import { Review } from "./components/store/Review.jsx";
 import { CheckoutForm } from "./components/store/CheckoutForm.jsx";
+import Series from "./components/Series";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -59,6 +60,7 @@ function App() {
             <Route path="/comic3" element={<Navigate to="/comics" />} />
             <Route path="/comic4" element={<Navigate to="/comics" />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/series" element={<Series />} />
             <Route path="/events/:id" element={<EventsDetail />} />
             <Route path="/stories" element={<Stories />} />
             <Route path="/checkout" element={<CheckoutPage />} />
