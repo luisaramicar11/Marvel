@@ -42,6 +42,7 @@ export default function Comics() {
   return (
     <>
       <div className={theme}>
+        <p className="h2 fw-bold p-4 text-center">Comics</p>
         <div className="contentComics">
           {data === null
             ? (data = null)

@@ -9,6 +9,7 @@ export function Products() {
 
   return (
     <div className={theme}>
+      <p className="h2 fw-bold p-4 text-center">SHOP</p>
       <div className="content-products">
         {listProducts.map((product) => (
           <Product
