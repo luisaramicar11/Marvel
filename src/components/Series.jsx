@@ -34,26 +34,28 @@ export default function Series() {
 
   return (
     <>
-      <div className="App">
-        <h1 className="title"><strong>Series</strong></h1>
+      <div className="app-series">
+        <h1 className="title-series">
+          <strong>Series</strong>
+        </h1>
 
         <div className="row row-cols-1 row-cols-md-4 g-4 border-primary mb-4">
           {data &&
             data.data.results.map((series) => (
-              <div className="col" key={series.id}>
+              <div className="columnas-series" key={series.id}>
                 <div
-                  className="cards"
+                  className="cards-series"
                   style={{ width: "20rem", height: "25rem" }}
                   onClick={() => handleShowModal(series)}
                 >
                   <img
                     src={`${series.thumbnail.path}.${series.thumbnail.extension}`}
-                    className="card-img-top"
+                    className="card-img-top-series"
                     style={{ width: "60%", height: "60%" }}
                     alt={series.title}
                   />
                   <div className="card-body">
-                    <p className="card-text">
+                    <p className="card-text-series">
                       <strong>{series.title}</strong>
                     </p>
                   </div>
@@ -71,10 +73,10 @@ export default function Series() {
               padding: "20px",
             }}
           >
-            <button onClick={handleGoBack} className="btn-primary">
+            <button onClick={handleGoBack} className="btn-primary-series">
               Go Back
             </button>
-            <button onClick={handleLoadMore} className="btn-primary">
+            <button onClick={handleLoadMore} className="btn-primary-series">
               Load More Series
             </button>
           </div>
@@ -90,10 +92,12 @@ export default function Series() {
             <>
               <img
                 src={`${selectedSeries.thumbnail.path}.${selectedSeries.thumbnail.extension}`}
-                className="modal-image"
+                className="modal-image-series"
                 alt={selectedSeries.title}
               />
-              <p className="modal-description">{selectedSeries.description}</p>
+              <p className="modal-description-series">
+                {selectedSeries.description}
+              </p>
             </>
           )}
         </Modal.Body>
