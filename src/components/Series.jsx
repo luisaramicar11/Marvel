@@ -54,7 +54,7 @@ export default function Series() {
                     style={{ width: "60%", height: "60%" }}
                     alt={series.title}
                   />
-                  <div className="card-body">
+                  <div className="card-body-series">
                     <p className="card-text-series">
                       <strong>{series.title}</strong>
                     </p>
