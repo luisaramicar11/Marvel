@@ -22,6 +22,13 @@ const translations = {
     footerCopy: `2023 @inroute. Hecho con fines educativos.`,
     comicsbutton: "Ver Más",
     btnGoBack: "Regresar",
+    homeTitleLoki: "Trailer Loki: Temporada 2, episodio 6",
+    homeTextLoki:
+      "El episodio final de la segunda temporada de Loki se juega como un final de serie, y tiene algunas ideas grandiosas.",
+    homeSubtitleLoki: "Disponible ahora en Disney+",
+    homeProducts: "NUEVOS Y POPULARES PRODUCTOS",
+    homeProductHeroes:
+      "Juego De 5 Héroes Marvel Figuras De Acción Spiderman Hulk...",
   },
   en: {
     welcome:
@@ -41,6 +48,13 @@ const translations = {
     footerCopy: `2023 @inroute. Made for educational purposes.`,
     comicsbutton: "see more",
     btnGoBack: "Go Back",
+    homeTitleLoki: "Loki Trailer: Season 2, Episode 6",
+    homeTextLoki:
+      "The final episode of Loki’s second season plays like a series finale, and it has some grand ideas.",
+    homeSubtitleLoki: "Available Now on Disney+",
+    homeProducts: "NEW & TRENDING PRODUCTS",
+    homeProductHeroes:
+      "Marvel Heroes 5 Figure Action Figure Set Spiderman Hulk...",
   },
 };
 
