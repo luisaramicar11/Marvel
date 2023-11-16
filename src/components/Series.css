@@ -18,6 +18,13 @@
   position: relative;
   width: 300px;
   height: 400px;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3), -5px 0 10px rgba(0, 0, 0, 0.3),
+    0 5px 10px rgba(0, 0, 0, 0.3), 0 -5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  }
 }
 .card-text {
   font-size: small;
@@ -32,20 +39,21 @@
   margin: 0 auto;
   border-radius: 20px;
   object-fit: cover;
-  border-color: gray;
-  border-style: solid;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.fw-bold {
+.title {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  color: white;
 }
 .card-text {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 .btn-primary {
   display: flex;
@@ -59,4 +67,41 @@
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1); 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); 
+  }
+}
+.App {
+  background-image: url("../assets/images/backgroundSeries2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.modal-content {
+  background-color: #fff;
+}
+
+.modal-header {
+  background-color: #e62429;
+  color: #fff;
+}
+
+.modal-body {
+  padding: 50px;
+}
+
+.modal-footer {
+  background-color: #f8f9fa;
+}
+.modal-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.modal-description {
+  font-size: large;
 }

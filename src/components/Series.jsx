@@ -1,13 +1,30 @@
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+import { Modal, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Series.css";
 
 export default function Series() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSeries, setSelectedSeries] = useState(null);
   const itemsPerPage = 20;
 
   const handleLoadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handleGoBack = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleShowModal = (series) => {
+    setSelectedSeries(series);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   let url = `https://gateway.marvel.com:443/v1/public/series?ts=1&apikey=e9dd281815e9f2feee7b70996badd7e3&hash=1382283f191e2e2a95cbf0301e4a187d&offset=${
@@ -18,7 +35,7 @@ export default function Series() {
   return (
     <>
       <div className="App">
-        <h1 className="fw-bold">Series</h1>
+        <h1 className="title"><strong>Series</strong></h1>
 
         <div className="row row-cols-1 row-cols-md-4 g-4 border-primary mb-4">
           {data &&
@@ -27,6 +44,7 @@ export default function Series() {
                 <div
                   className="cards"
                   style={{ width: "20rem", height: "25rem" }}
+                  onClick={() => handleShowModal(series)}
                 >
                   <img
                     src={`${series.thumbnail.path}.${series.thumbnail.extension}`}
@@ -37,12 +55,6 @@ export default function Series() {
                   <div className="card-body">
                     <p className="card-text">
                       <strong>{series.title}</strong>
-                    </p>
-                    <p className="card-text">
-                      Stories Available: {series.stories.available}
-                    </p>
-                    <p className="card-text">
-                      Comics Available: {series.comics.available}
                     </p>
                   </div>
                 </div>
@@ -59,12 +71,38 @@ export default function Series() {
               padding: "20px",
             }}
           >
+            <button onClick={handleGoBack} className="btn-primary">
+              Go Back
+            </button>
             <button onClick={handleLoadMore} className="btn-primary">
               Load More Series
             </button>
           </div>
         )}
       </div>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedSeries && selectedSeries.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selectedSeries && (
+            <>
+              <img
+                src={`${selectedSeries.thumbnail.path}.${selectedSeries.thumbnail.extension}`}
+                className="modal-image"
+                alt={selectedSeries.title}
+              />
+              <p className="modal-description">{selectedSeries.description}</p>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
