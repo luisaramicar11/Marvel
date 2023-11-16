@@ -1,9 +1,9 @@
-.columnas-series{
+.columnas-series {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.cards-series{
+.cards-series {
   margin: 0;
   display: grid;
   justify-content: column;
@@ -64,17 +64,16 @@
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
   &:hover {
-    transform: scale(1.1); 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); 
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
   }
 }
-.app-series{
+.app-series {
   background-image: url("../assets/images/backgroundSeries2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-
 
 .modal-body-series {
   padding: 50px;

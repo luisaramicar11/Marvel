@@ -35,7 +35,9 @@ export default function Series() {
   return (
     <>
       <div className="app-series">
-        <h1 className="title-series"><strong>Series</strong></h1>
+        <h1 className="title-series">
+          <strong>Series</strong>
+        </h1>
 
         <div className="row row-cols-1 row-cols-md-4 g-4 border-primary mb-4">
           {data &&
@@ -93,7 +95,9 @@ export default function Series() {
                 className="modal-image-series"
                 alt={selectedSeries.title}
               />
-              <p className="modal-description-series">{selectedSeries.description}</p>
+              <p className="modal-description-series">
+                {selectedSeries.description}
+              </p>
             </>
           )}
         </Modal.Body>
