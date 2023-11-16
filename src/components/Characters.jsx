@@ -1,10 +1,13 @@
 import { useFetch } from "../hooks/useFetch";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { CharactersCard } from "./CharactersCard";
 import ReactPaginate from "react-paginate";
+import LanguageContext from "./context/LanguageContext";
 import "./Characters.css";
 
 export function Characters() {
+  const { texts } = useContext(LanguageContext);
+
   const [url, setUrl] = useState(
     `https://gateway.marvel.com:443/v1/public/characters?limit=10&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
   );
@@ -50,7 +53,7 @@ export function Characters() {
           <div className="search-bar text-center pt-5 ">
             <input
               type="search"
-              placeholder="Search Superhero"
+              placeholder={texts.searchSuperhero}
               className="search bg-second-color"
               onChange={(e) => {
                 setSearch(e.target.value);

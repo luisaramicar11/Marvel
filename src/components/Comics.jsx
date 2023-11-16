@@ -3,11 +3,13 @@ import { useFetch } from "../hooks/useFetch";
 import Modal from "./ComicsModal";
 import LanguageContext from "./context/LanguageContext";
 import ReactPaginate from "react-paginate";
+import ThemeContext from "./context/ThemeContext";
 
 import "./Comics.css";
 
 export default function Comics() {
   const { texts } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
   const [model, setModel] = useState(false);
   const [tempData, setTempData] = useState([]);
 
@@ -39,7 +41,7 @@ export default function Comics() {
 
   return (
     <>
-      <div>
+      <div className={theme}>
         <div className="contentComics">
           {data === null
             ? (data = null)
