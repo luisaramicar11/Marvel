@@ -32,6 +32,7 @@ const translations = {
     homeProductHeadphones: "Audífonos tipo diadema con micrófono ",
     homeFunko: "Funko Pop! Marvel: Los vengadores Juego",
     searchSuperhero: "Buscar Súper Héroe",
+    homeSpiderman: "Figura de acción de Spiderman ",
   },
   en: {
     welcome:
@@ -61,6 +62,7 @@ const translations = {
     homeProductHeadphones: "Headphones with Microphone",
     homeFunko: "Funko Pop! Marvel: Avengers Game",
     searchSuperhero: "Search Superhero",
+    homeSpiderman: "Spiderman Action Figure",
   },
 };
 
