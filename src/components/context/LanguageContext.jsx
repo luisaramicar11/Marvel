@@ -31,6 +31,7 @@ const translations = {
       "Juego De 5 Héroes Marvel Figuras De Acción Spiderman Hulk...",
     homeProductHeadphones: "Audífonos tipo diadema con micrófono ",
     homeFunko: "Funko Pop! Marvel: Los vengadores Juego",
+    homeSpiderman: "Figura de acción de Spiderman ",
   },
   en: {
     welcome:
@@ -59,6 +60,7 @@ const translations = {
       "Marvel Heroes 5 Figure Action Figure Set Spiderman Hulk...",
     homeProductHeadphones: "Headphones with Microphone",
     homeFunko: "Funko Pop! Marvel: Avengers Game",
+    homeSpiderman: "Spiderman Action Figure",
   },
 };
 
