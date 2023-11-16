@@ -15,6 +15,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 *,
@@ -28,4 +29,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
+}
+
+.light {
+  background-color: var(--bg-color);
+  color: var(--third-alpha-color);
+}
+.dark {
+  background-color: #151515;
+  color: #7e7e7f;
 }

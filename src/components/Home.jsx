@@ -22,9 +22,11 @@ import juegoMesa from "../assets/tienda/juegoMesa.webp";
 import "./Home.css";
 import { Product } from "./store/Product";
 import Hulk from "../assets/images/hulk.jpg";
+import ThemeContext from "./context/ThemeContext";
 
 export function Home() {
   const { texts } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
 
   const responsive = {
     desktop: {
@@ -58,7 +60,7 @@ export function Home() {
   };
 
   return (
-    <div className="bg-color">
+    <div className={theme}>
       <img className="hero-image" src={HeroesMarvel} alt="HeroesMarvel" />
       <section className="row min-vh-100 align-items-lg-center">
         <p className="text-left fw-bold p-4 fs-3">{texts.homelatestComics}</p>
@@ -263,7 +265,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Audífonos tipo diadema con micrófono "}
+                name={texts.homeProductHeadphones}
                 price={129900}
                 image={audifonos}
                 rating={3}
@@ -275,7 +277,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Funko Pop! Marvel: Avengers Game"}
+                name={texts.homeFunko}
                 price={97000}
                 image={funko}
                 rating={5}

@@ -1,17 +1,18 @@
 import { StoriesCard } from "./StoriesCard";
 import { useFetch } from "../hooks/useFetch";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ReactPaginate from "react-paginate";
+import ThemeContext from "./context/ThemeContext";
 
 export function Stories() {
+  const { theme } = useContext(ThemeContext);
+
   const [url, setUrl] = useState(
     `https://gateway.marvel.com:443/v1/public/stories?limit=10&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
   );
 
   let { data, isPending, error, setData } = useFetch(url);
   const [herosPerPage, setHerosPerPage] = useState(10);
-
-  console.log(data);
 
   const fetchHeros = (currentPage) => {
     setUrl(
@@ -30,7 +31,7 @@ export function Stories() {
 
   return (
     <>
-      <div className="pt-5 bg-color">
+      <div className={theme}>
         <div className="container">
           <section className="row g-0">
             <article className="col-12 text-center">
