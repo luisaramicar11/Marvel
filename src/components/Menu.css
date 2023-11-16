@@ -67,6 +67,30 @@ a:hover {
   color: var(--bs-white);
 }
 
+.sign-in-button {
+  color: var(--first-color);
+}
+
+.sign-in-button:hover {
+  color: var(--bs-white);
+}
+
+.bg-amount-basket {
+  background-color: var(--first-color);
+}
+
+.bg-basket {
+  color: var(--first-color);
+}
+
+.bg-basket:hover {
+  color: var(--bs-white);
+}
+
+.p-select {
+  padding-left: 0;
+}
+
 /* // X-Small devices (portrait phones, less than 576px)
     // No media query for `xs` since this is the default in Bootstrap */
 /* // Small devices (landscape phones, 576px and up) */

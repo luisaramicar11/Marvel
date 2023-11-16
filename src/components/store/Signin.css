@@ -1,0 +1,28 @@
+.p-signin {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.p-account {
+  font-size: 0.875rem;
+}
+
+body {
+  margin-top: 20px;
+  background: #f6f9fc;
+}
+
+.text-theme {
+  color: var(--first-color) !important;
+}
+
+.btn-theme {
+  background-color: var(--first-color) !important;
+  color: #fff !important;
+}
+
+.img-spiderman {
+  width: 100%;
+  height: 32rem !important;
+  margin-top: 2rem;
+}

@@ -1,0 +1,8 @@
+.text-theme {
+  color: var(--first-color) !important;
+}
+
+.btn-theme {
+  background-color: var(--first-color) !important;
+  color: #fff !important;
+}

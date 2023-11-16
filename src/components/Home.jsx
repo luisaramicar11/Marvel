@@ -103,6 +103,46 @@ export function Home() {
           </div>
         </article>
       </section>
+
+      <div
+        className="card mb-3 mt-3 "
+        style={{ maxWidth: "960px", height: "auto", margin: "0 auto" }}
+      >
+        <div className="row g-0">
+          <div className="col-md-6">
+            <div className="rounded-start ratio ratio-16x9 active ">
+              <iframe
+                className="rounded-start "
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/bInH1DkpFNA?si=NLnC-pYw4l1crIyf"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div className="col-md-6 d-flex align-items-center">
+            <div className="card-body">
+              <h5 className="card-title fw-bold">
+                {" "}
+                TRAILER LOKI: SEASON 2 EPISODE 6
+              </h5>
+              <div className="card-text">
+                The final episode of Loki’s second season plays like a series
+                finale, and it has some grand ideas.
+              </div>
+              <div className="card-text">
+                <small className="text-body-secondary">
+                  Available Now on Disney
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <p className="text-center fw-bold p-5">{texts.homelatestTrailer}</p>
       <div id="carouselExample" className="carousel slide mt-5">
         <div className="carousel-inner">
