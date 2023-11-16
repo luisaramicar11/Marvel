@@ -275,7 +275,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Funko Pop! Marvel: Avengers Game"}
+                name={texts.homeFunko}
                 price={97000}
                 image={funko}
                 rating={5}
