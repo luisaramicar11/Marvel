@@ -9,10 +9,12 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/images/MarvelLogo.svg";
 import es from "../assets/images/es.svg";
 import LanguageContext from "./context/LanguageContext";
+import ThemeContext from "./context/ThemeContext";
 import "./Menu.css";
 
 export function Menu() {
   const { texts, handleLanguage } = useContext(LanguageContext);
+  const { theme, handleTheme } = useContext(ThemeContext);
   const [{ basket, user }, dispatch] = useStateValue();
   const navigate = useNavigate();
   const handleAuth = () => {
@@ -127,6 +129,18 @@ export function Menu() {
                       >
                         <option value="en">EN</option>
                         <option value="es">ES</option>
+                      </select>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item ">
+                      <select
+                        className=" dropdown-item p-select"
+                        name="theme"
+                        onChange={handleTheme}
+                      >
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
                       </select>
                     </a>
                   </li>

@@ -1,10 +1,13 @@
 import { CheckoutCard } from "./CheckoutCard";
 import { TotalCard } from "./TotalCard";
 import { useStateValue } from "./StateProvider";
+import ThemeContext from "../context/ThemeContext";
+import { useContext } from "react";
 import "./CheckoutPage.css";
 
 export function CheckoutPage() {
   const [{ basket }, dispatch] = useStateValue();
+  const { theme } = useContext(ThemeContext);
   function FormRow() {
     return (
       <>
@@ -23,7 +26,7 @@ export function CheckoutPage() {
     );
   }
   return (
-    <div>
+    <div className={theme}>
       <section className="row g-0">
         <article className="col-12 text-center pt-5">
           <h1 className="fw-bold">Shopping Cart</h1>
