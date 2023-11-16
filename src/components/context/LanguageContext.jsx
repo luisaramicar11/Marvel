@@ -29,6 +29,8 @@ const translations = {
     homeProducts: "NUEVOS Y POPULARES PRODUCTOS",
     homeProductHeroes:
       "Juego De 5 Héroes Marvel Figuras De Acción Spiderman Hulk...",
+    homeProductHeadphones: "Audífonos tipo diadema con micrófono ",
+    homeFunko: "Funko Pop! Marvel: Los vengadores Juego",
   },
   en: {
     welcome:
@@ -55,6 +57,8 @@ const translations = {
     homeProducts: "NEW & TRENDING PRODUCTS",
     homeProductHeroes:
       "Marvel Heroes 5 Figure Action Figure Set Spiderman Hulk...",
+    homeProductHeadphones: "Headphones with Microphone",
+    homeFunko: "Funko Pop! Marvel: Avengers Game",
   },
 };
 
