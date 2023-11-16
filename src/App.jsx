@@ -13,8 +13,8 @@ import { EventsDetail } from "./components/EventsDetail";
 import Footer from "./components/Footer";
 import { Stories } from "./components/Stories";
 import { Error404 } from "./components/Error404";
-
 import { LanguageProvider } from "./components/context/LanguageContext";
+import Series from "./components/Series";
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/events/:id" element={<EventsDetail />} />
             <Route path="/stories" element={<Stories />} />
+            <Route path="/series" element={<Series />} />
 
             <Route path="/ContactForm" element={<ContactForm />} />
             <Route path="*" element={<Error404 />}></Route>
