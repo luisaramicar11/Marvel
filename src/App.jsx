@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import { Stories } from "./components/Stories";
 import { Error404 } from "./components/Error404";
 import { LanguageProvider } from "./components/context/LanguageContext";
+import Series from "./components/Series";
 import { useEffect } from "react";
 import { auth } from "./components/store/Firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
@@ -61,6 +62,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/events/:id" element={<EventsDetail />} />
             <Route path="/stories" element={<Stories />} />
+            <Route path="/series" element={<Series />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
