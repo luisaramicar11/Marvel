@@ -263,7 +263,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Audífonos tipo diadema con micrófono "}
+                name={texts.homeProductHeadphones}
                 price={129900}
                 image={audifonos}
                 rating={3}
