@@ -1,14 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.col {
+.columnas-series{
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.cards {
+.cards-series{
   margin: 0;
   display: grid;
   justify-content: column;
@@ -16,8 +11,8 @@
   background-color: whitesmoke;
   border-radius: 15px;
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: auto;
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3), -5px 0 10px rgba(0, 0, 0, 0.3),
     0 5px 10px rgba(0, 0, 0, 0.3), 0 -5px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
@@ -26,14 +21,14 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
   }
 }
-.card-text {
+.card-text-series {
   font-size: small;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.card-img-top {
+.card-img-top-series {
   width: 50%;
   display: block;
   margin: 0 auto;
@@ -42,20 +37,20 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.title {
+.title-series {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   color: white;
 }
-.card-text {
+.card-text-series {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
 }
-.btn-primary {
+.btn-primary-series {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -73,35 +68,24 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); 
   }
 }
-.App {
+.app-series{
   background-image: url("../assets/images/backgroundSeries2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.modal-content {
-  background-color: #fff;
-}
 
-.modal-header {
-  background-color: #e62429;
-  color: #fff;
-}
-
-.modal-body {
+.modal-body-series {
   padding: 50px;
 }
 
-.modal-footer {
-  background-color: #f8f9fa;
-}
-.modal-image {
+.modal-image-series {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
   border-radius: 10px;
 }
-.modal-description {
+.modal-description-series {
   font-size: large;
 }
