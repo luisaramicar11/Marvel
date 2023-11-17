@@ -1,8 +1,11 @@
 import { useStateValue } from "./StateProvider.jsx";
 import { actionTypes } from "./Reducer.jsx";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
 
 export function CheckoutCard({ name, price, image, rating, id, quantity }) {
   const [{ basket }, dispatch] = useStateValue();
+  const { texts } = useContext(LanguageContext);
 
   /*  const removeItem = () => {
     dispatch({
@@ -30,15 +33,17 @@ export function CheckoutCard({ name, price, image, rating, id, quantity }) {
               <h5 className="card-title p-2">{name}</h5>
             </div>
             <div>
-              Price:{" "}
+              {texts.price}{" "}
               {price.toLocaleString("en-US", {
                 style: "currency",
                 currency: "COP",
               })}
             </div>
-            <div>Quantity: {quantity}</div>
             <div>
-              Total:{" "}
+              {texts.quantity} {quantity}
+            </div>
+            <div>
+              {texts.total}{" "}
               {(price * quantity).toLocaleString("en-US", {
                 style: "currency",
                 currency: "COP",

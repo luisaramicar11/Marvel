@@ -37,6 +37,11 @@ body {
   font-size: 1.5rem;
   border: thin solid #b41f23;
 }
+
+input[type="search"] {
+  color: black;
+}
+
 .content-characterCard {
   width: 80%;
   margin: 3rem auto;

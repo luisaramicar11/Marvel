@@ -42,7 +42,7 @@ export default function Comics() {
   return (
     <>
       <div className={theme}>
-        <p className="h2 fw-bold p-4 text-center">Comics</p>
+        <p className="h2 fw-bold p-4 text-center">{texts.comicsTitle}</p>
         <div className="contentComics">
           {data === null
             ? (data = null)
@@ -74,6 +74,25 @@ export default function Comics() {
                 </div>
               ))}
         </div>
+        <ReactPaginate
+          previuosLabel={"Previous"}
+          nextLabel={"Next"}
+          breakLabel={"..."}
+          pageCount={157}
+          marginPagesDisplayed={3}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination justify-content-center mb-0"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
       {model === true ? (
         <Modal
@@ -85,25 +104,6 @@ export default function Comics() {
       ) : (
         ""
       )}
-      <ReactPaginate
-        previuosLabel={"Previous"}
-        nextLabel={"Next"}
-        breakLabel={"..."}
-        pageCount={157}
-        marginPagesDisplayed={3}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination justify-content-center mb-0"}
-        pageClassName={"page-item"}
-        pageLinkClassName={"page-link"}
-        previousClassName={"page-item"}
-        previousLinkClassName={"page-link"}
-        nextClassName={"page-item"}
-        nextLinkClassName={"page-link"}
-        breakClassName={"page-item"}
-        breakLinkClassName={"page-link"}
-        activeClassName={"active"}
-      />
     </>
   );
 }

@@ -1,12 +1,15 @@
 import { useStateValue } from "./StateProvider";
 import { getTotalPrice } from "./Reducer";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
 
 export function Review({ nextStep, prevStep }) {
   const [{ basket }, dispatch] = useStateValue();
+  const { texts } = useContext(LanguageContext);
   return (
     <>
       <form className="m-1">
-        <h2 className="mb-5 fw-bold text-center">Order Summary</h2>
+        <h2 className="mb-5 fw-bold text-center">{texts.orderSummary}</h2>
         <div className="container">
           {basket?.map((item) => (
             <div key={item.id} className="row d-flex">
@@ -30,7 +33,9 @@ export function Review({ nextStep, prevStep }) {
                 >
                   {item.name}
                 </div>
-                <div className="fw-light">Quantity: {item.quantity}</div>
+                <div className="fw-light">
+                  {texts.quantity} {item.quantity}
+                </div>
               </div>
               <div className="col text-end align-self-center  p-0">
                 {(item.price * item.quantity).toLocaleString("en-US", {
@@ -42,7 +47,7 @@ export function Review({ nextStep, prevStep }) {
           ))}
           <div className="row d-flex justify-content-around pt-3">
             <div className="col text-end fs-5" style={{ fontSize: "1rem" }}>
-              Total
+              {texts.total}
             </div>
             <div className="col text-end fw-normal">
               {getTotalPrice(basket).toLocaleString("en-US", {

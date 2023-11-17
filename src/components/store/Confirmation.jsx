@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
+
 const Confirmation = ({ message }) => {
+  const { texts } = useContext(LanguageContext);
   return (
     <div className="container-fluid">
-      <h2 className="text-center mt-4 mb-4 fw-bold">
-        Thank you for your order.
-      </h2>
+      <h2 className="text-center mt-4 mb-4 fw-bold">{texts.thankyou}</h2>
       <div>
         {message === "Payment successful"
-          ? "Your payment was successful. You will receive an email with your order details."
-          : "Your payment was not successful. Please try again."}
+          ? texts.messageSuccesfull
+          : texts.messageUnsuccesfull}
       </div>
 
       <div className="d-flex justify-content-center">
@@ -21,7 +23,7 @@ const Confirmation = ({ message }) => {
               color: "white",
             }}
           >
-            STORE
+            {texts.btnStore}
           </button>
         </Link>
       </div>

@@ -63,7 +63,9 @@ export function Home() {
     <div className={theme}>
       <img className="hero-image" src={HeroesMarvel} alt="HeroesMarvel" />
       <section className="row min-vh-100 align-items-lg-center">
-        <p className="text-left fw-bold p-4 fs-3">{texts.homelatestComics}</p>
+        <p className="text-left fw-bold p-4 fs-3">
+          <strong>{texts.homelatestComics}</strong>
+        </p>
         <article className="col-12 col-md-6 col-lg-3 d-flex">
           <div className="card mx-auto mb-3" style={{ width: "18rem" }}>
             <img
@@ -289,7 +291,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Figura de acción de Spiderman "}
+                name={texts.homeSpiderman}
                 price={180000}
                 image={spiderman}
                 rating={5}
@@ -301,7 +303,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Figura de accion de Iron man"}
+                name={texts.homeIronman}
                 price={150000}
                 image={ironman}
                 rating={5}
@@ -313,7 +315,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Lámpara 3D Marvel Spiderman"}
+                name={texts.homeLamp}
                 price={94900}
                 image={lampara}
                 rating={5}
@@ -325,7 +327,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Reloj Inteligente Marvel Spiderman"}
+                name={texts.homeWatch}
                 price={245000}
                 image={reloj}
                 rating={4}
@@ -349,7 +351,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Juego De Mesa Marvel "}
+                name={texts.homeGame}
                 price={194000}
                 image={juegoMesa}
                 rating={4}
@@ -361,7 +363,7 @@ export function Home() {
           <div>
             <Link to="/products" className="text-decoration-none">
               <Product
-                name={"Figura de acción de Spiderman "}
+                name={texts.homeFigure}
                 price={180000}
                 image={spiderman}
                 rating={5}
@@ -381,16 +383,12 @@ export function Home() {
           style={{ height: "30rem" }}
         />
         <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
-          <h2 className="card-title fw-bold ">JOIN MARVEL</h2>
-          <div className="card-text h4">
-            Register for FREE to access member-exclusive content and activities,
-            read FREE comics from MARVEL STUDIOS, and get alerts and early
-            access to exclusive products from MARVEL Shop!
-          </div>
-          <Link to="/signin">
+          <h2 className="card-title fw-bold ">{texts.homeJoin}</h2>
+          <div className="card-text h4">{texts.homeRegister}</div>
+          <Link to="/signup">
             <button
               type="button"
-              className="btn btn-outline-secondary fw-bold"
+              className="btn btn-outline-secondary fw-bold mt-4"
               style={{
                 width: "10rem",
                 color: "white",
@@ -398,7 +396,7 @@ export function Home() {
                 borderRadius: "1rem",
               }}
             >
-              SIGN UP NOW
+              {texts.homeSignUp}
             </button>
           </Link>
         </div>

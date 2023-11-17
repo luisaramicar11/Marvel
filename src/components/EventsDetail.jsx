@@ -30,7 +30,7 @@ export function EventsDetail() {
                 alt=""
               />
             </div>
-            <div className="left-box">
+            <div className="left-box d-flex flex-column">
               <h1>{data.data.results[0].name}</h1>
               <h4>{data.data.results[0].description}</h4>
               <button

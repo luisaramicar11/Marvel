@@ -4,9 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { auth } from "./Firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
 
 export function Signup() {
   const [email, setEmail] = useState("");
+  const { texts } = useContext(LanguageContext);
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -34,7 +37,7 @@ export function Signup() {
                   <div className="p-5">
                     <div className="mb-5">
                       <h3 className="h2 fw-bold text-theme text-center">
-                        SIGN UP
+                        {texts.navSignUp}
                       </h3>
                     </div>
                     <form>
@@ -75,7 +78,7 @@ export function Signup() {
                           className="form-check-label mb-4"
                           htmlFor="flexCheckDefault"
                         >
-                          I want to receive news and special offers.
+                          {texts.specialOffer}
                         </label>
                       </div>
                       <button
@@ -83,17 +86,17 @@ export function Signup() {
                         className="btn btn-theme d-block w-100 mb-4 fw-bold"
                         onClick={signup}
                       >
-                        SIGN UP
+                        {texts.navSignOut}
                       </button>
                       <div className="d-flex justify-content-end">
                         <small>
                           <div className="text-muted text-center mb-0">
-                            Already have an account?{" "}
+                            {texts.yesAccount}{" "}
                             <Link
                               to="/signin"
                               className="text-primary ml-1 text-decoration-none"
                             >
-                              Sign in
+                              {texts.navSignIn}
                             </Link>
                           </div>
                         </small>

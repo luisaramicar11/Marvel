@@ -117,8 +117,13 @@ export function Menu() {
                           {user ? texts.navSignOut : texts.navSignIn}
                         </button>
                       </Link>
-                      <p>{user ? user.email : ""}</p>
+                      <small>{user ? user.email : ""}</small>
                     </a>
+                  </li>
+                  <li>
+                    <Link className="text-decoration-none" to="/ContactForm">
+                      <a className="dropdown-item">{texts.formTitle}</a>
+                    </Link>
                   </li>
                   <li>
                     <a className="dropdown-item ">
@@ -139,8 +144,8 @@ export function Menu() {
                         name="theme"
                         onChange={handleTheme}
                       >
-                        <option value="light">Light</option>
-                        <option value="dark">Dark</option>
+                        <option value="light">LIGHT</option>
+                        <option value="dark">DARK</option>
                       </select>
                     </a>
                   </li>

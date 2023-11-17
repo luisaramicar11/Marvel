@@ -3,11 +3,12 @@ import { useState, useContext } from "react";
 import { EventsCard } from "./EventsCard";
 import ReactPaginate from "react-paginate";
 import ThemeContext from "./context/ThemeContext";
-
+import LanguageContext from "./context/LanguageContext";
 import "./Events.css";
 
 export default function Events() {
   const { theme } = useContext(ThemeContext);
+  const { texts } = useContext(LanguageContext);
   const [url, setUrl] = useState(
     `https://gateway.marvel.com:443/v1/public/events?limit=10&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
   );
@@ -31,33 +32,33 @@ export default function Events() {
   return (
     <>
       <div className={theme}>
-        <div className="containerEvents">
+        <div className="containerEvents p-4">
           {data === null ? (
             (data = null)
           ) : (
             <EventsCard data={data?.data.results} />
           )}
         </div>
+        <ReactPaginate
+          previuosLabel={texts.paginationPrevious}
+          nextLabel={texts.paginationNext}
+          breakLabel={"..."}
+          pageCount={157}
+          marginPagesDisplayed={3}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination justify-content-center mb-0"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
-      <ReactPaginate
-        previuosLabel={"Previous"}
-        nextLabel={"Next"}
-        breakLabel={"..."}
-        pageCount={157}
-        marginPagesDisplayed={3}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination justify-content-center mb-0"}
-        pageClassName={"page-item"}
-        pageLinkClassName={"page-link"}
-        previousClassName={"page-item"}
-        previousLinkClassName={"page-link"}
-        nextClassName={"page-item"}
-        nextLinkClassName={"page-link"}
-        breakClassName={"page-item"}
-        breakLinkClassName={"page-link"}
-        activeClassName={"active"}
-      />
     </>
   );
 }

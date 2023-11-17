@@ -18,7 +18,11 @@ export default function Footer() {
           <a href="https://twitter.com/Marvel" target="_blank" rel="noreferrer">
             <i className="bi bi-twitter fs-3"></i>
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/luisaramicar11/Marvel"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="bi bi-github fs-3"></i>
           </a>
           <a

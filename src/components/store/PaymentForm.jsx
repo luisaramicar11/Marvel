@@ -13,6 +13,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useState } from "react";
 import Loader from "../Loader.jsx";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
 
 const stripePromise = loadStripe(
   "pk_test_51Mg5xgBrpCweGOwO5WyzFtab5GW10YJEKpbW9beEpXma9INwmEBTeEz3Nk8k4WbUV1J6zmyyiuUpje5UMi7MV2KH00fWNKsKM9"
@@ -44,6 +46,7 @@ const CARD_ELEMENT_OPTIONS = {
 const CheckoutStripe = ({ nextStep, prevStep }) => {
   const [{ basket, paymentMessage }, dispatch] = useStateValue();
   const [loading, setLoading] = useState(false);
+  const { texts } = useContext(LanguageContext);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -97,7 +100,7 @@ const CheckoutStripe = ({ nextStep, prevStep }) => {
           style={{ backgroundColor: "#e62429", color: "white" }}
           onClick={prevStep}
         >
-          BACK
+          {texts.btnBack}
         </button>
 
         <button
@@ -120,6 +123,7 @@ const CheckoutStripe = ({ nextStep, prevStep }) => {
 };
 
 export function PaymentForm({ nextStep, prevStep }) {
+  const { texts } = useContext(LanguageContext);
   return (
     <>
       <Review />
@@ -128,7 +132,7 @@ export function PaymentForm({ nextStep, prevStep }) {
         className="mb-5 fw-bold text-center"
         style={{ margin: "1.5rem 0", paddingBottom: "1rem" }}
       >
-        Payment method
+        {texts.paymentMethod}
       </h2>
       <Elements stripe={stripePromise}>
         <CheckoutStripe nextStep={nextStep} prevStep={prevStep} />

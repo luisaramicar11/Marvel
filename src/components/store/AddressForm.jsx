@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./Reducer";
+import LanguageContext from "../context/LanguageContext";
 
 export function AddressForm({ nextStep }) {
   const [form, setForm] = useState({});
   const [{ shippingData }, dispatch] = useStateValue();
+  const { texts } = useContext(LanguageContext);
 
   const handleChange = (e) => {
     setForm({
@@ -32,7 +34,7 @@ export function AddressForm({ nextStep }) {
 
   return (
     <form onSubmit={handleSubmit} className="m-5">
-      <h2 className="mb-5 text-center fw-bold">Shipping address</h2>
+      <h2 className="mb-5 text-center fw-bold">{texts.shippingAdress}</h2>
       <div className="row mb-4">
         <div className="col">
           <div className="form-outline">
@@ -161,7 +163,7 @@ export function AddressForm({ nextStep }) {
         />
         <label className="form-check-label" htmlFor="form6Example8">
           {" "}
-          Use this adress for payment details{" "}
+          {texts.useAddress}{" "}
         </label>
       </div>
       <div className="d-flex justify-content-between mt-3">
@@ -171,13 +173,13 @@ export function AddressForm({ nextStep }) {
             className="btn mt-4 fw-bold"
             style={{ background: "#e62429", color: "white" }}
           >
-            BACK
+            {texts.btnBack}
           </button>
         </Link>
 
         <input
           type="submit"
-          value="NEXT"
+          value={texts.btnNext}
           className="btn btn-danger mt-4 fw-bold"
           style={{ border: "none", background: "#e62429", color: "white" }}
         />

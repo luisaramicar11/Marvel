@@ -1,6 +1,6 @@
 .content-products {
   width: 80%;
-  margin: 3rem auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;

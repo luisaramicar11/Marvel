@@ -4,10 +4,12 @@ import { useStateValue } from "./StateProvider";
 import ThemeContext from "../context/ThemeContext";
 import { useContext } from "react";
 import "./CheckoutPage.css";
+import LanguageContext from "../context/LanguageContext";
 
 export function CheckoutPage() {
   const [{ basket }, dispatch] = useStateValue();
   const { theme } = useContext(ThemeContext);
+  const { texts } = useContext(LanguageContext);
   function FormRow() {
     return (
       <>
@@ -29,7 +31,7 @@ export function CheckoutPage() {
     <div className={theme}>
       <section className="row g-0">
         <article className="col-12 text-center pt-5">
-          <h1 className="fw-bold">Shopping Cart</h1>
+          <h1 className="fw-bold">{texts.shoppingCart}</h1>
         </article>
         <article className="box-store ">
           <div className="box-store">

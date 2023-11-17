@@ -2,9 +2,12 @@ import { useStateValue } from "./StateProvider.jsx";
 import { actionTypes } from "./Reducer.jsx";
 import { Link } from "react-router-dom";
 import { getTotalPrice } from "./Reducer.jsx";
+import LanguageContext from "../context/LanguageContext";
+import { useContext } from "react";
 
 export function TotalCard() {
   const [{ basket }, dispatch] = useStateValue();
+  const { texts } = useContext(LanguageContext);
 
   const removeAllItem = () => {
     dispatch({
@@ -15,7 +18,7 @@ export function TotalCard() {
     <>
       <div className="d-flex flex-column align-items-end h-20 mx-5 vh-20 ">
         <h5>
-          Total items:{" "}
+          {texts.totalItems}{" "}
           {(function () {
             let total = 0;
             basket.forEach((item) => {
@@ -25,7 +28,7 @@ export function TotalCard() {
           })()}
         </h5>
         <h5>
-          Total price:{" "}
+          {texts.totalPrice}{" "}
           {getTotalPrice(basket).toLocaleString("en-US", {
             style: "currency",
             currency: "COP",
@@ -39,7 +42,7 @@ export function TotalCard() {
           style={{ backgroundColor: "#e62429", color: "white" }}
           onClick={removeAllItem}
         >
-          CLEAN CART
+          {texts.clearCart}
         </button>
         <Link to="/checkoutForm">
           <button
@@ -47,7 +50,7 @@ export function TotalCard() {
             className="btn mt-4 fw-bold"
             style={{ background: "#e62429", color: "white" }}
           >
-            CHECK OUT
+            {texts.checkout}
           </button>
         </Link>
       </div>

@@ -1,22 +1,46 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useFetch } from "../hooks/useFetch";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Series.css";
+import ReactPaginate from "react-paginate";
+import LanguageContext from "./context/LanguageContext";
 
 export default function Series() {
   const [currentPage, setCurrentPage] = useState(1);
+  const { texts } = useContext(LanguageContext);
+
   const [showModal, setShowModal] = useState(false);
   const [selectedSeries, setSelectedSeries] = useState(null);
-  const itemsPerPage = 20;
+  const itemsPerPage = 10;
+  const [url, setUrl] = useState(
+    `https://gateway.marvel.com:443/v1/public/series?limit=10&offset=0&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
+  );
 
-  const handleLoadMore = () => {
+  let { data, isPending, error, setData } = useFetch(url);
+
+  const fetchStories = (currentSeries) => {
+    setUrl(
+      `https://gateway.marvel.com:443/v1/public/series?limit=${itemsPerPage}&offset=${currentSeries}&ts=1&apikey=e717a1131b49e9fb649910cbac9d56b4&hash=5f3153f3860a4f6a8ae93103339008df`
+    );
+  };
+
+  const handlePageClick = (pagNumber) => {
+    console.log(pagNumber);
+    console.log(pagNumber.selected);
+    let currentSeries = pagNumber.selected * 10;
+    console.log(currentPage);
+    const storiesForServer = fetchStories(currentSeries);
+    setData(storiesForServer);
+  };
+
+  /* const handleLoadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
   const handleGoBack = () => {
     setCurrentPage((prevPage) => prevPage - 1);
-  };
+  }; */
 
   const handleShowModal = (series) => {
     setSelectedSeries(series);
@@ -26,17 +50,16 @@ export default function Series() {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
+  /* 
   let url = `https://gateway.marvel.com:443/v1/public/series?ts=1&apikey=e9dd281815e9f2feee7b70996badd7e3&hash=1382283f191e2e2a95cbf0301e4a187d&offset=${
     (currentPage - 1) * itemsPerPage
-  }`;
-  let { data, isPending, error } = useFetch(url);
+  }`; */
 
   return (
     <>
-      <div className="app-series">
+      <div className="app-series p-4">
         <h1 className="title-series">
-          <strong>Series</strong>
+          <strong>SERIES</strong>
         </h1>
 
         <div className="row row-cols-1 row-cols-md-4 g-4 border-primary mb-4">
@@ -64,7 +87,7 @@ export default function Series() {
             ))}
         </div>
 
-        {data && data.data.total > currentPage * itemsPerPage && (
+        {/* {data && data.data.total > currentPage * itemsPerPage && (
           <div
             style={{
               display: "flex",
@@ -72,15 +95,35 @@ export default function Series() {
               marginTop: "20px",
               padding: "20px",
             }}
-          >
-            <button onClick={handleGoBack} className="btn-primary-series">
+          > */}
+        {/* <button onClick={handleGoBack} className="btn-primary-series">
               Go Back
             </button>
             <button onClick={handleLoadMore} className="btn-primary-series">
               Load More Series
-            </button>
-          </div>
-        )}
+            </button> */}
+
+        <ReactPaginate
+          previuosLabel={texts.paginationPrevious}
+          nextLabel={texts.paginationNext}
+          breakLabel={"..."}
+          pageCount={100}
+          marginPagesDisplayed={3}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination justify-content-center mb-0"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
+        {/* </div>
+        )} */}
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal}>

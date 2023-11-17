@@ -48,8 +48,8 @@ export function Characters() {
 
   return (
     <>
-      <div className="header-characters min-vh-100 bg-hero-image ">
-        <article className="min-vh-100 bg-alpha-color">
+      <div className="header-characters min-vh-100 bg-hero-image p-4">
+        <article className="min-vh-100 p-4">
           <div className="search-bar text-center pt-5 ">
             <input
               type="search"
@@ -69,14 +69,14 @@ export function Characters() {
             )}
           </div>
           <ReactPaginate
-            previuosLabel={"Previous"}
-            nextLabel={"Next"}
+            previuosLabel={texts.paginationPrevious}
+            nextLabel={texts.paginationNext}
             breakLabel={"..."}
             pageCount={157}
             marginPagesDisplayed={3}
             pageRangeDisplayed={3}
             onPageChange={handlePageClick}
-            containerClassName={"pagination justify-content-center mb-0"}
+            containerClassName={"pagination justify-content-center m-0"}
             pageClassName={"page-item"}
             pageLinkClassName={"page-link"}
             previousClassName={"page-item"}

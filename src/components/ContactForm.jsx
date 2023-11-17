@@ -2,6 +2,8 @@ import { useForm } from "../hooks/useForm";
 import Loader from "./Loader";
 import Message from "./Message";
 import "./ContactForm.css";
+import LanguageContext from "./context/LanguageContext";
+import { useContext } from "react";
 
 const initialForm = {
   name: "",
@@ -47,6 +49,7 @@ let styles = {
 };
 
 const ContactForm = () => {
+  const { texts, handleLanguage } = useContext(LanguageContext);
   const {
     form,
     errors,
@@ -58,9 +61,9 @@ const ContactForm = () => {
   } = useForm(initialForm, validationForm);
 
   return (
-    <div>
-      <h2>Contáctanos!</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="p-4">
+      <h2 className="fw-bold text-center p-4">{texts.formTitle}</h2>
+      <form onSubmit={handleSubmit} className="d-flex flex-column">
         <input
           type="text"
           name="name"
@@ -70,7 +73,7 @@ const ContactForm = () => {
           onBlur={handleBlur}
           required
         />
-        {errors.name && <p style={styles}>{errors.name}</p>}
+        {errors.name && <div style={styles}>{errors.name}</div>}
         <input
           type="email"
           name="email"
@@ -80,7 +83,7 @@ const ContactForm = () => {
           onBlur={handleBlur}
           required
         />
-        {errors.email && <p style={styles}>{errors.email}</p>}
+        {errors.email && <div style={styles}>{errors.email}</div>}
         <input
           type="text"
           name="subject"
@@ -90,7 +93,7 @@ const ContactForm = () => {
           onBlur={handleBlur}
           required
         />
-        {errors.subject && <p style={styles}>{errors.subject}</p>}
+        {errors.subject && <div style={styles}>{errors.subject}</div>}
         <textarea
           name="comments"
           cols="50"
@@ -101,8 +104,8 @@ const ContactForm = () => {
           onBlur={handleBlur}
           required
         ></textarea>
-        {errors.comments && <p style={styles}>{errors.comments}</p>}
-        <input type="submit" value="Enviar" />
+        {errors.comments && <div style={styles}>{errors.comments}</div>}
+        <input className="align-self-center" type="submit" value="Enviar" />
       </form>
       {loading && <Loader />}
       {response && (
