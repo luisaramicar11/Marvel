@@ -137,18 +137,6 @@ export function Menu() {
                       </select>
                     </a>
                   </li>
-                  <li>
-                    <a className="dropdown-item ">
-                      <select
-                        className=" dropdown-item p-select"
-                        name="theme"
-                        onChange={handleTheme}
-                      >
-                        <option value="light">LIGHT</option>
-                        <option value="dark">DARK</option>
-                      </select>
-                    </a>
-                  </li>
                 </ul>
               </li>
             </ul>
@@ -171,6 +159,14 @@ export function Menu() {
               </button>
             </Link>
           </div>
+          <input
+            id="toggle-button"
+            type="checkbox"
+            onChange={handleTheme}
+          ></input>
+          <label htmlFor="toggle-button">
+            <div className="sun-moon"></div>
+          </label>
         </div>
       </nav>
     </header>
