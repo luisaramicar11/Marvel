@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useEffect } from "react";
 import { useStateValue } from "../components/store/StateProvider.jsx";
 import { useAccordionButton } from "react-bootstrap";
 import { auth } from "../components/store/Firebase.js";
@@ -10,6 +11,7 @@ import Logo from "../assets/images/MarvelLogo.svg";
 import es from "../assets/images/es.svg";
 import LanguageContext from "./context/LanguageContext";
 import ThemeContext from "./context/ThemeContext";
+import { Tooltip } from "react-tooltip";
 import "./Menu.css";
 
 export function Menu() {
@@ -31,6 +33,7 @@ export function Menu() {
       navigate("/");
     }
   };
+
   return (
     <header>
       <nav className="navbar sticky-top navbar-expand-lg navbar-light navbar-dark bg-dark">
@@ -141,7 +144,6 @@ export function Menu() {
               </li>
             </ul>
           </div>
-
           <div>
             <Link to="/checkout">
               <button type="button" className="btn border-0 position-relative">
@@ -165,9 +167,12 @@ export function Menu() {
             onChange={handleTheme}
           ></input>
           <label htmlFor="toggle-button">
-            <div className="sun-moon"></div>
+            <div className="sun-moon my-anchor-element"></div>
           </label>
         </div>
+        <Tooltip anchorSelect=".my-anchor-element" place="top">
+          Theme
+        </Tooltip>
       </nav>
     </header>
   );
