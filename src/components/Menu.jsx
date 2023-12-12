@@ -166,7 +166,7 @@ export function Menu() {
             type="checkbox"
             onChange={handleTheme}
           ></input>
-          <label htmlFor="toggle-button">
+          <label id="toggle-theme" htmlFor="toggle-button">
             <div className="sun-moon my-anchor-element"></div>
           </label>
         </div>

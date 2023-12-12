@@ -94,12 +94,12 @@ a:hover {
   padding-left: 0;
 }
 
-input {
+#toggle-button {
   opacity: 0;
   position: absolute;
 }
 
-label {
+#toggle-theme {
   align-items: center;
   background-color: var(--light-0);
   background-position: bottom;
@@ -114,13 +114,13 @@ label {
   width: 30px;
 }
 
-#toggle-button:checked + label {
+#toggle-button:checked + #toggle-theme {
   background-image: url(/src/assets/images/dark-mode-icon.svg);
   background-position: center;
   background-size: cover;
 }
 
-label .sun-moon {
+#toggle-theme .sun-moon {
   background-image: url(/src/assets/images/sun.svg);
   border-radius: 50%;
   height: 30px;
@@ -128,7 +128,7 @@ label .sun-moon {
   width: 30px;
 }
 
-#toggle-button:checked + label .sun-moon {
+#toggle-button:checked + #toggle-theme .sun-moon {
   background-image: url(/src/assets/images/dark-mode-icon.svg);
 }
 
